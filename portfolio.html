@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Web Production & Development</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0B0D10',
+                        cardDark: '#161922',
+                        textMain: '#F9FAFB',
+                        textMuted: '#9CA3AF',
+                        accentGold: '#F59E0B',
+                        accentGlow: '#D97706',
+                        borderDark: '#272B36'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-darkBg text-textMain font-sans antialiased selection:bg-amber-500/30">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-darkBg/80 backdrop-blur-md z-50 border-b border-borderDark">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-lg tracking-tight text-white flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Web Production
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium">
+                <a href="index.html" class="text-textMuted hover:text-white transition-colors">Home</a>
+                <a href="services.html" class="text-textMuted hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="text-amber-400 border-b-2 border-amber-400 pb-1 font-semibold">Portfolio</a>
+                <a href="contact.html" class="text-textMuted hover:text-white transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 text-xs font-medium">
+                <div class="flex space-x-1.5 text-xs uppercase tracking-widest text-textMuted">
+                    <button onclick="changeLang('en')" id="btn-en" class="text-amber-400 font-semibold px-1 py-0.5 border-b border-amber-400">EN</button>
+                    <button onclick="changeLang('es')" id="btn-es" class="text-textMuted hover:text-white px-1 py-0.5">ES</button>
+                    <button onclick="changeLang('ua')" id="btn-ua" class="text-textMuted hover:text-white px-1 py-0.5">UA</button>
+                    <button onclick="changeLang('ru')" id="btn-ru" class="text-textMuted hover:text-white px-1 py-0.5">RU</button>
+                </div>
+                <a href="contact.html" class="ml-4 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-darkBg transition-all duration-300 uppercase text-[10px] tracking-widest font-semibold shadow-lg shadow-amber-500/10">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16 text-center max-w-2xl mx-auto">
+            <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-3 px-3 py-1 bg-amber-500/10 rounded-full inline-block border border-amber-500/20">Selected Projects</span>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-gray-200 to-amber-200 bg-clip-text text-transparent">Web Development & Case Studies</h1>
+            <p class="text-textMuted text-sm md:text-base font-light">Explore recent projects focused on responsive landing pages, UI/UX prototyping, e-commerce layouts, and custom front-end solutions.</p>
+        </div>
+
+        <!-- Static Portfolio Grid -->
+        <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project 1: Element Restaurant -->
+            <div class="bg-cardDark p-8 rounded-3xl border border-borderDark flex flex-col justify-between hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 group">
+                <div>
+                    <span class="text-[11px] uppercase tracking-widest text-amber-400 font-semibold mb-2 block">Web Design & Development</span>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-amber-300 transition-colors">Element Restaurant</h3>
+                    <p class="text-textMuted text-sm font-light mb-6">Aesthetic landing page for a fine-dining establishment featuring a seasonal menu layout, reservations integration, and custom typography.</p>
+                </div>
+                <div>
+                    <div class="w-full aspect-[16/9] bg-darkBg rounded-2xl overflow-hidden mb-6 border border-borderDark cursor-pointer shadow-inner relative group-hover:border-amber-500/40 transition-colors" onclick="openModal('restaurant-modal')">
+                        <img src="element-1.png" alt="Element Restaurant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <button onclick="openModal('restaurant-modal')" class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-amber-400 border-b border-amber-400/50 pb-0.5 hover:border-amber-400 hover:text-amber-300 transition-all cursor-pointer">
+                        View Details &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 2: Vanguard Construction -->
+            <div class="bg-cardDark p-8 rounded-3xl border border-borderDark flex flex-col justify-between hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 group">
+                <div>
+                    <span class="text-[11px] uppercase tracking-widest text-amber-400 font-semibold mb-2 block">Corporate Landing Page</span>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-amber-300 transition-colors">Vanguard Construction</h3>
+                    <p class="text-textMuted text-sm font-light mb-6">Full-cycle landing page layout for an architectural & construction firm. Includes interactive request forms, project portfolio grid, and service breakdowns.</p>
+                </div>
+                <div>
+                    <div class="w-full aspect-[16/9] bg-darkBg rounded-2xl overflow-hidden mb-6 border border-borderDark cursor-pointer shadow-inner relative group-hover:border-amber-500/40 transition-colors" onclick="openModal('vanguard-modal')">
+                        <img src="vanguard-1.png" alt="Vanguard Construction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <button onclick="openModal('vanguard-modal')" class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-amber-400 border-b border-amber-400/50 pb-0.5 hover:border-amber-400 hover:text-amber-300 transition-all cursor-pointer">
+                        View Details &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 3: Black Friday E-Commerce -->
+            <div class="bg-cardDark p-8 rounded-3xl border border-borderDark flex flex-col justify-between hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 group">
+                <div>
+                    <span class="text-[11px] uppercase tracking-widest text-amber-400 font-semibold mb-2 block">E-Commerce Promotional Layout</span>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-amber-300 transition-colors">Maison Muvimal — Black Friday</h3>
+                    <p class="text-textMuted text-sm font-light mb-6">High-converting promotional landing page engineered for peak seasonal sales. Features hero banners, discounted product grids, and clean pricing architecture.</p>
+                </div>
+                <div>
+                    <div class="w-full aspect-[16/9] bg-darkBg rounded-2xl overflow-hidden mb-6 border border-borderDark cursor-pointer shadow-inner relative group-hover:border-amber-500/40 transition-colors" onclick="openModal('blackfriday-modal')">
+                        <img src="black-friday.jpeg" alt="Black Friday Sale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <button onclick="openModal('blackfriday-modal')" class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-amber-400 border-b border-amber-400/50 pb-0.5 hover:border-amber-400 hover:text-amber-300 transition-all cursor-pointer">
+                        View Details &rarr;
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- МОДАЛЬНЫЕ ОКНА ДЛЯ ГАЛЕРЕИ -->
+    <div id="restaurant-modal" class="fixed inset-0 bg-darkBg/95 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-cardDark max-w-4xl w-full rounded-3xl p-8 relative max-h-[90vh] overflow-y-auto border border-borderDark shadow-2xl">
+            <button onclick="closeModal('restaurant-modal')" class="absolute top-6 right-6 text-textMuted font-semibold text-sm hover:text-amber-400 transition-colors">✕ Close</button>
+            <h2 class="text-2xl font-bold mb-1 text-white">Element Restaurant — Full Gallery</h2>
+            <p class="text-textMuted text-xs mb-6">All sections and responsive views of the restaurant landing page.</p>
+            <div class="space-y-4">
+                <img src="element-1.png" class="w-full rounded-2xl border border-borderDark" alt="1">
+                <img src="element-2.png" class="w-full rounded-2xl border border-borderDark" alt="2">
+                <img src="element-3.png" class="w-full rounded-2xl border border-borderDark" alt="3">
+                <img src="element-4.png" class="w-full rounded-2xl border border-borderDark" alt="4">
+                <img src="element-5.png" class="w-full rounded-2xl border border-borderDark" alt="5">
+                <img src="element-6.png" class="w-full rounded-2xl border border-borderDark" alt="6">
+                <img src="element-7.png" class="w-full rounded-2xl border border-borderDark" alt="7">
+                <img src="element-8.png" class="w-full rounded-2xl border border-borderDark" alt="8">
+            </div>
+        </div>
+    </div>
+
+    <div id="vanguard-modal" class="fixed inset-0 bg-darkBg/95 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-cardDark max-w-4xl w-full rounded-3xl p-8 relative max-h-[90vh] overflow-y-auto border border-borderDark shadow-2xl">
+            <button onclick="closeModal('vanguard-modal')" class="absolute top-6 right-6 text-textMuted font-semibold text-sm hover:text-amber-400 transition-colors">✕ Close</button>
+            <h2 class="text-2xl font-bold mb-1 text-white">Vanguard Construction — Full Gallery</h2>
+            <p class="text-textMuted text-xs mb-6">Corporate architectural landing page sections and UI modules.</p>
+            <div class="space-y-4">
+                <img src="vanguard-1.png" class="w-full rounded-2xl border border-borderDark" alt="1">
+                <img src="vanguard-2.png" class="w-full rounded-2xl border border-borderDark" alt="2">
+                <img src="vanguard-3.png" class="w-full rounded-2xl border border-borderDark" alt="3">
+                <img src="vanguard-4.png" class="w-full rounded-2xl border border-borderDark" alt="4">
+                <img src="vanguard-5.png" class="w-full rounded-2xl border border-borderDark" alt="5">
+                <img src="vanguard-6.png" class="w-full rounded-2xl border border-borderDark" alt="6">
+                <img src="vanguard-7.png" class="w-full rounded-2xl border border-borderDark" alt="7">
+            </div>
+        </div>
+    </div>
+
+    <div id="blackfriday-modal" class="fixed inset-0 bg-darkBg/95 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-cardDark max-w-3xl w-full rounded-3xl p-8 relative max-h-[90vh] overflow-y-auto border border-borderDark shadow-2xl">
+            <button onclick="closeModal('blackfriday-modal')" class="absolute top-6 right-6 text-textMuted font-semibold text-sm hover:text-amber-400 transition-colors">✕ Close</button>
+            <h2 class="text-2xl font-bold mb-1 text-white">Maison Muvimal — Black Friday</h2>
+            <p class="text-textMuted text-xs mb-6">Full-length promotional e-commerce layout.</p>
+            <div class="space-y-4">
+                <img src="black-friday.jpeg" class="w-full rounded-2xl border border-borderDark" alt="Black Friday">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-borderDark py-12 text-center text-xs uppercase tracking-widest text-textMuted">
+        <p>&copy; 2026 Web Production. All rights reserved.</p>
+    </footer>
+
+    <!-- Плавающая кнопка Telegram -->
+    <a href="https://t.me/+380989938604" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#229ED9] hover:bg-[#1f8abf] text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+       title="Написати в Telegram">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.08-.78 4.22-1.84 7.03-3.05 8.43-3.62 4.01-1.66 4.84-1.95 5.38-1.96.12 0 .39.03.56.17.14.12.18.28.2.45-.02.07-.02.13-.04.2z"/>
+        </svg>
+    </a>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        function changeLang(lang) {
+            ['en', 'es', 'ua', 'ru'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (btn) {
+                    if (l === lang) {
+                        btn.className = "text-amber-400 font-semibold px-1 py-0.5 border-b border-amber-400";
+                    } else {
+                        btn.className = "text-textMuted hover:text-white px-1 py-0.5";
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

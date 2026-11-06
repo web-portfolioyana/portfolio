@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Web Production & Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0B0D10',
+                        cardDark: '#161922',
+                        textMain: '#F9FAFB',
+                        textMuted: '#9CA3AF',
+                        accentGold: '#F59E0B',
+                        borderDark: '#272B36'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .page-transition {
+            animation: fadeInPage 0.5s ease-out forwards;
+        }
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-textMain font-sans antialiased selection:bg-amber-500/30 page-transition">
+
+    <!-- Навигация -->
+    <header class="fixed top-0 left-0 w-full bg-darkBg/80 backdrop-blur-md z-50 border-b border-borderDark">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-lg tracking-tight text-white flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Web Production
+            </a>
+            <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-medium">
+                <a href="index.html" data-i18n="nav-home" class="text-textMuted hover:text-white transition-colors">Home</a>
+                <a href="services.html" data-i18n="nav-services" class="text-amber-400 border-b-2 border-amber-400 pb-1 font-semibold">Services</a>
+                <a href="portfolio.html" data-i18n="nav-portfolio" class="text-textMuted hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" data-i18n="nav-contact" class="text-textMuted hover:text-white transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 text-xs font-medium">
+                <div class="flex space-x-1.5 text-xs uppercase tracking-widest text-textMuted">
+                    <button onclick="changeLang('en')" id="btn-en" class="text-amber-400 font-semibold px-1 py-0.5 border-b border-amber-400">EN</button>
+                    <button onclick="changeLang('es')" id="btn-es" class="text-textMuted hover:text-white px-1 py-0.5">ES</button>
+                    <button onclick="changeLang('ua')" id="btn-ua" class="text-textMuted hover:text-white px-1 py-0.5">UA</button>
+                    <button onclick="changeLang('ru')" id="btn-ru" class="text-textMuted hover:text-white px-1 py-0.5">RU</button>
+                </div>
+                <a href="contact.html" data-i18n="nav-talk" class="hidden sm:inline-block px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-darkBg transition-all duration-300 uppercase text-[10px] tracking-widest font-semibold shadow-lg shadow-amber-500/10">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-32 pb-24 px-6 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+            <span data-i18n="serv-tag" class="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-3 px-3 py-1 bg-amber-500/10 rounded-full inline-block border border-amber-500/20">Expertise & Offerings</span>
+            <h1 data-i18n="serv-title" class="text-3xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white via-gray-200 to-amber-200 bg-clip-text text-transparent">Web Development & Front-End Solutions</h1>
+            <p data-i18n="serv-desc" class="text-textMuted text-sm md:text-base leading-relaxed font-light">
+                Crafting high-performing landing pages, responsive multi-page sites, and elegant digital interfaces tailored for your business growth.
+            </p>
+        </div>
+
+        <!-- Сетка услуг -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+            
+            <!-- Услуга 1 -->
+            <div class="bg-cardDark p-10 rounded-3xl flex flex-col justify-between reveal border border-borderDark hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-3xl font-bold text-amber-400 group-hover:scale-110 transition-transform">01</span>
+                        <span data-i18n="s1-badge" class="text-[11px] uppercase tracking-widest bg-darkBg border border-borderDark px-3 py-1 rounded-full text-textMuted font-medium">Landing Pages</span>
+                    </div>
+                    <h3 data-i18n="s1-title" class="text-2xl font-bold mb-4 text-white group-hover:text-amber-300 transition-colors">Custom Landing Page Development</h3>
+                    <p data-i18n="s1-desc" class="text-textMuted text-sm md:text-base leading-relaxed font-light mb-8">
+                        Clean, semantic HTML and CSS/Tailwind coding. Developing fast, fully responsive landing pages designed to convert visitors into clients with flawless visual hierarchy.
+                    </p>
+                </div>
+                <div class="pt-6 border-t border-borderDark flex items-center justify-between">
+                    <span data-i18n="s-scope1" class="text-xs uppercase tracking-widest text-amber-400 font-semibold">HTML / CSS / Tailwind</span>
+                    <a href="contact.html" data-i18n="s-inquire" class="text-xs uppercase tracking-widest font-semibold text-amber-400 border-b border-amber-400/50 pb-0.5 hover:border-amber-400 hover:text-amber-300 transition-all cursor-pointer">Inquire →</a>
+                </div>
+            </div>
+
+            <!-- Услуга 2 -->
+            <div class="bg-cardDark p-10 rounded-3xl flex flex-col justify-between reveal border border-borderDark hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-3xl font-bold text-amber-400 group-hover:scale-110 transition-transform">02</span>
+                        <span data-i18n="s2-badge" class="text-[11px] uppercase tracking-widest bg-darkBg border border-borderDark px-3 py-1 rounded-full text-textMuted font-medium">UI/UX Layouts</span>
+                    </div>
+                    <h3 data-i18n="s2-title" class="text-2xl font-bold mb-4 text-white group-hover:text-amber-300 transition-colors">UI/UX & Web Prototyping</h3>
+                    <p data-i18n="s2-desc" class="text-textMuted text-sm md:text-base leading-relaxed font-light mb-8">
+                        Designing intuitive web interfaces and interactive prototypes in Figma. Focusing on modern aesthetics, user experience, and seamless transition from design to code.
+                    </p>
+                </div>
+                <div class="pt-6 border-t border-borderDark flex items-center justify-between">
+                    <span data-i18n="s-scope2" class="text-xs uppercase tracking-widest text-amber-400 font-semibold">Figma & Wireframing</span>
+                    <a href="contact.html" data-i18n="s-inquire" class="text-xs uppercase tracking-widest font-semibold text-amber-400 border-b border-amber-400/50 pb-0.5 hover:border-amber-400 hover:text-amber-300 transition-all cursor-pointer">Inquire →</a>
+                </div>
+            </div>
+
+            <!-- Услуга 3 -->
+            <div class="bg-cardDark p-10 rounded-3xl flex flex-col justify-between reveal border border-borderDark hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-3xl font-bold text-amber-400 group-hover:scale-110 transition-transform">03</span>
+                        <span data-i18n="s3-badge" class="text-[11px] uppercase tracking-widest bg-darkBg border border-borderDark px-3 py-1 rounded-full text-textMuted font-medium">E-Commerce Promos</span>
+                    </div>
+                    <h3 data-i18n="s3-title" class="text-2xl font-bold mb-4 text-white group-hover:text-amber-300 transition-colors">Promotional & Seasonal Layouts</h3>
+                    <p data-i18n="s3-desc" class="text-textMuted text-sm md:text-base leading-relaxed font-light mb-8">
+                        Specialized e-commerce promo pages, holiday campaigns (like Black Friday sales), and product showcases built to maximize engagement and seasonal conversion rates.
+                    </p>
+                </div>
+                <div class="pt-6 border-t border-borderDark flex items-center justify-between">
+                    <span data-i18n="s-scope3" class="text-xs uppercase tracking-widest text-amber-400 font-semibold">Promo Architecture</span>
+                    <a href="contact.html" data-i18n="s-inquire" class="text-xs uppercase tracking-widest font-semibold text-amber-400 border-b border-amber-400/50 pb-0.5 hover:border-amber-400 hover:text-amber-300 transition-all cursor-pointer">Inquire →</a>
+                </div>
+            </div>
+
+            <!-- Услуга 4 -->
+            <div class="bg-cardDark p-10 rounded-3xl flex flex-col justify-between reveal border border-borderDark hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-3xl font-bold text-amber-400 group-hover:scale-110 transition-transform">04</span>
+                        <span data-i18n="s4-badge" class="text-[11px] uppercase tracking-widest bg-darkBg border border-borderDark px-3 py-1 rounded-full text-textMuted font-medium">Optimization</span>
+                    </div>
+                    <h3 data-i18n="s4-title" class="text-2xl font-bold mb-4 text-white group-hover:text-amber-300 transition-colors">Frontend Refactoring & Adaptation</h3>
+                    <p data-i18n="s4-desc" class="text-textMuted text-sm md:text-base leading-relaxed font-light mb-8">
+                        Upgrading existing web assets, ensuring cross-browser compatibility, optimizing asset delivery, and fine-tuning responsive layouts for mobile devices and tablets.
+                    </p>
+                </div>
+                <div class="pt-6 border-t border-borderDark flex items-center justify-between">
+                    <span data-i18n="s-scope4" class="text-xs uppercase tracking-widest text-amber-400 font-semibold">Responsive Tuning</span>
+                    <a href="contact.html" data-i18n="s-inquire" class="text-xs uppercase tracking-widest font-semibold text-amber-400 border-b border-amber-400/50 pb-0.5 hover:border-amber-400 hover:text-amber-300 transition-all cursor-pointer">Inquire →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-cardDark to-darkBg border border-borderDark text-textMain p-12 md:p-16 rounded-3xl text-center reveal relative overflow-hidden shadow-2xl">
+            <h2 data-i18n="cta-title" class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to launch your next web project?</h2>
+            <p data-i18n="cta-desc" class="text-textMuted text-sm md:text-base max-w-xl mx-auto font-light mb-8">
+                Let's discuss how we can turn your concept into a fast, responsive, and high-performing website.
+            </p>
+            <a href="contact.html" data-i18n="cta-btn" class="inline-block bg-amber-500 text-darkBg px-8 py-4 rounded-full text-xs uppercase tracking-widest font-semibold hover:bg-amber-400 transition-all duration-300 shadow-lg shadow-amber-500/20">
+                Start a Project
+            </a>
+        </div>
+    </main>
+
+    <footer class="border-t border-borderDark py-12 text-center text-xs uppercase tracking-widest text-textMuted">
+        <p data-i18n="footer-text">&copy; 2026 Web Production. All rights reserved.</p>
+    </footer>
+
+    <!-- Плавающая кнопка Telegram -->
+    <a href="https://t.me/+380989938604" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#229ED9] hover:bg-[#1f8abf] text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+       title="Написати в Telegram">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.08-.78 4.22-1.84 7.03-3.05 8.43-3.62 4.01-1.66 4.84-1.95 5.38-1.96.12 0 .39.03.56.17.14.12.18.28.2.45-.02.07-.02.13-.04.2z"/>
+        </svg>
+    </a>
+
+    <script>
+        const translations = {
+            en: {
+                "nav-home": "Home", "nav-services": "Services", "nav-portfolio": "Portfolio", "nav-contact": "Contact", "nav-talk": "Let's Talk",
+                "serv-tag": "Expertise & Offerings", "serv-title": "Web Development & Front-End Solutions",
+                "serv-desc": "Crafting high-performing landing pages, responsive multi-page sites, and elegant digital interfaces tailored for your business growth.",
+                "s1-badge": "Landing Pages", "s1-title": "Custom Landing Page Development", "s1-desc": "Clean, semantic HTML and CSS/Tailwind coding. Developing fast, fully responsive landing pages designed to convert visitors into clients with flawless visual hierarchy.",
+                "s2-badge": "UI/UX Layouts", "s2-title": "UI/UX & Web Prototyping", "s2-desc": "Designing intuitive web interfaces and interactive prototypes in Figma. Focusing on modern aesthetics, user experience, and seamless transition from design to code.",
+                "s3-badge": "E-Commerce Promos", "s3-title": "Promotional & Seasonal Layouts", "s3-desc": "Specialized e-commerce promo pages, holiday campaigns (like Black Friday sales), and product showcases built to maximize engagement and seasonal conversion rates.",
+                "s4-badge": "Optimization", "s4-title": "Frontend Refactoring & Adaptation", "s4-desc": "Upgrading existing web assets, ensuring cross-browser compatibility, optimizing asset delivery, and fine-tuning responsive layouts for mobile devices and tablets.",
+                "s-scope1": "HTML / CSS / Tailwind", "s-scope2": "Figma & Wireframing", "s-scope3": "Promo Architecture", "s-scope4": "Responsive Tuning", "s-inquire": "Inquire →",
+                "cta-title": "Ready to launch your next web project?", "cta-desc": "Let's discuss how we can turn your concept into a fast, responsive, and high-performing website.", "cta-btn": "Start a Project",
+                "footer-text": "© 2026 Web Production. All rights reserved."
+            },
+            es: {
+                "nav-home": "Inicio", "nav-services": "Servicios", "nav-portfolio": "Portafolio", "nav-contact": "Contacto", "nav-talk": "Hablemos",
+                "serv-tag": "Experiencia y Servicios", "serv-title": "Desarrollo Web y Soluciones Front-End",
+                "serv-desc": "Creación de páginas de aterrizaje de alto rendimiento, sitios web multipágina responsivos e interfaces digitales elegantes adaptadas para el crecimiento de tu negocio.",
+                "s1-badge": "Landing Pages", "s1-title": "Desarrollo de Landing Pages a Medida", "s1-desc": "Código HTML y CSS/Tailwind limpio y semántico. Desarrollo de páginas rápidas y responsivas diseñadas para convertir visitantes en clientes.",
+                "s2-badge": "Diseño UI/UX", "s2-title": "Prototipado Web y UI/UX", "s2-desc": "Diseño de interfaces web intuitivas y prototipos interactivos en Figma con un enfoque en la estética moderna y la experiencia de usuario.",
+                "s3-badge": "Promos E-Commerce", "s3-title": "Maquetación Promocional y Estacional", "s3-desc": "Páginas promocionales especializadas, campañas de temporada (como Black Friday) y escaparates de productos orientados a maximizar conversiones.",
+                "s4-badge": "Optimización", "s4-title": "Refactorización y Adaptación Frontend", "s4-desc": "Actualización de recursos web existentes, garantía de compatibilidad entre navegadores y ajuste de diseños responsivos para móviles y tabletas.",
+                "s-scope1": "HTML / CSS / Tailwind", "s-scope2": "Figma y Wireframes", "s-scope3": "Arquitectura Promo", "s-scope4": "Ajuste Responsivo", "s-inquire": "Consultar →",
+                "cta-title": "¿Lista para lanzar tu próximo proyecto web?", "cta-desc": "Hablemos sobre cómo convertir tu concepto en un sitio web rápido, responsivo y de alto rendimiento.", "cta-btn": "Iniciar Proyecto",
+                "footer-text": "© 2026 Web Production. Todos los derechos reservados."
+            },
+            ua: {
+                "nav-home": "Головна", "nav-services": "Послуги", "nav-portfolio": "Портфоліо", "nav-contact": "Контакти", "nav-talk": "Обговорити проєкт",
+                "serv-tag": "Експертиза та послуги", "serv-title": "Веб-розробка та Front-End рішення",
+                "serv-desc": "Створення швидких лендингів, адаптивних багатосторінкових сайтів та елегантних цифрових інтерфейсів для розвитку вашого бізнесу.",
+                "s1-badge": "Лендинги", "s1-title": "Розробка кастомних лендингів", "s1-desc": "Чистий семантичний HTML та CSS/Tailwind код. Створення швидких, адаптивних посадкових сторінок, орієнтованих на високу конверсію та зручність.",
+                "s2-badge": "UI/UX макети", "s2-title": "UI/UX та вебпрототипування", "s2-desc": "Проєктування інтуїтивних інтерфейсів та інтерактивних прототипів у Figma з акцентом на сучасну естетику та якісний користувацький досвід.",
+                "s3-badge": "E-Commerce Промо", "s3-title": "Промо та сезонні макети", "s3-desc": "Спеціалізовані акційні сторінки, сезонні кампанії (наприклад, розпродажі до Чорної п'ятниці) та презентації продуктів для максимального залучення.",
+                "s4-badge": "Оптимізація", "s4-title": "Фронтенд-рефакторинг та адаптація", "s4-desc": "Поліпшення існуючих вебсторінок, забезпечення кросбраузерності, оптимізація коду та точне налаштування адаптивності під мобільні пристрої.",
+                "s-scope1": "HTML / CSS / Tailwind", "s-scope2": "Figma та прототипи", "s-scope3": "Промо-архітектура", "s-scope4": "Адаптивне налаштування", "s-inquire": "Запитати →",
+                "cta-title": "Готові запустити свій новий вебпроєкт?", "cta-desc": "Обговоримо, як перетворити вашу ідею на швидкий, адаптивний та ефективний вебсайт.", "cta-btn": "Розпочати проєкт",
+                "footer-text": "© 2026 Web Production. Усі права захищено."
+            },
+            ru: {
+                "nav-home": "Главная", "nav-services": "Услуги", "nav-portfolio": "Портфолио", "nav-contact": "Контакты", "nav-talk": "Обсудить проект",
+                "serv-tag": "Экспертиза и услуги", "serv-title": "Веб-разработка и Front-End решения",
+                "serv-desc": "Создание быстрых лендингов, адаптивных многостраничных сайтов и элегантных цифровых интерфейсов для роста вашего бизнеса.",
+                "s1-badge": "Лендинги", "s1-title": "Разработка кастомных лендингов", "s1-desc": "Чистый семантичный HTML и CSS/Tailwind код. Создание быстрых, адаптивных посадочных страниц, ориентированных на высокую конверсию.",
+                "s2-badge": "UI/UX макеты", "s2-title": "UI/UX и веб-прототипирование", "s2-desc": "Проектирование интуитивных интерфейсов и интерактивных прототипов в Figma с акцентом на современную эстетику и пользовательский опыт.",
+                "s3-badge": "E-Commerce Промо", "s3-title": "Промо и сезонные макеты", "s3-desc": "Специализированные акционные страницы, сезонные кампании (например, распродажи Черной пятницы) и презентации продуктов для максимального вовлечения.",
+                "s4-badge": "Оптимизация", "s4-title": "Фронтенд-рефакторинг и адаптация", "s4-desc": "Улучшение существующих веб-страниц, обеспечение кроссбраузерности, оптимизация кода и точная настройка адаптивности под мобильные устройства.",
+                "s-scope1": "HTML / CSS / Tailwind", "s-scope2": "Figma и прототипы", "s-scope3": "Промо-архитектура", "s-scope4": "Адаптивная настройка", "s-inquire": "Обсудить →",
+                "cta-title": "Готовы запустить свой новый веб-проект?", "cta-desc": "Обсудим, как воплотить вашу идею в быстрый, адаптивный и эффективный веб-сайт.", "cta-btn": "Начать проект",
+                "footer-text": "© 2026 Web Production. Все права защищены."
+            }
+        };
+
+        function changeLang(lang) {
+            ['en', 'es', 'ua', 'ru'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (l === lang) {
+                    btn.className = "text-amber-400 font-semibold px-1 py-0.5 border-b border-amber-400";
+                } else {
+                    btn.className = "text-textMuted hover:text-white px-1 py-0.5";
+                }
+            });
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+        }
+
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
